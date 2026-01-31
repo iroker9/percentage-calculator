@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Percentage Calculator – Easy Online Percentage Calculations</title>
+  <meta name="description" content="Free online percentage calculator to calculate percentage of a number, percentage increase, decrease, and percentage difference easily.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      padding: 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+    h1, h2 {
+      text-align: center;
+      color: #333;
+    }
+    .box {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .result {
+      margin-top: 10px;
+      font-weight: bold;
+      text-align: center;
+    }
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #777;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Percentage Calculator</h1>
+
+<div class="box">
+  <h2>Percentage of a Number</h2>
+  <input type="number" id="p1" placeholder="Percentage (%)">
+  <input type="number" id="p2" placeholder="Number">
+  <button onclick="percentOf()">Calculate</button>
+  <div class="result" id="r1"></div>
+</div>
+
+<div class="box">
+  <h2>What Percent Is One Number of Another</h2>
+  <input type="number" id="w1" placeholder="Part">
+  <input type="number" id="w2" placeholder="Whole">
+  <button onclick="whatPercent()">Calculate</button>
+  <div class="result" id="r2"></div>
+</div>
+
+<div class="box">
+  <h2>Percentage Increase</h2>
+  <input type="number" id="i1" placeholder="Original Value">
+  <input type="number" id="i2" placeholder="New Value">
+  <button onclick="increase()">Calculate</button>
+  <div class="result" id="r3"></div>
+</div>
+
+<div class="box">
+  <h2>Percentage Decrease</h2>
+  <input type="number" id="d1" placeholder="Original Value">
+  <input type="number" id="d2" placeholder="New Value">
+  <button onclick="decrease()">Calculate</button>
+  <div class="result" id="r4"></div>
+</div>
+
+<footer>
+  <hr>
+  © 2026 Percentage Calculator · For informational purposes only
+</footer>
+
+<script>
+function percentOf() {
+  let p = document.getElementById("p1").value;
+  let n = document.getElementById("p2").value;
+  document.getElementById("r1").innerText =
+    (p / 100 * n).toFixed(2);
+}
+
+function whatPercent() {
+  let a = document.getElementById("w1").value;
+  let b = document.getElementById("w2").value;
+  document.getElementById("r2").innerText =
+    ((a / b) * 100).toFixed(2) + "%";
+}
+
+function increase() {
+  let o = document.getElementById("i1").value;
+  let n = document.getElementById("i2").value;
+  document.getElementById("r3").innerText =
+    (((n - o) / o) * 100).toFixed(2) + "% increase";
+}
+
+function decrease() {
+  let o = document.getElementById("d1").value;
+  let n = document.getElementById("d2").value;
+  document.getElementById("r4").innerText =
+    (((o - n) / o) * 100).toFixed(2) + "% decrease";
+}
+</script>
+
+</body>
+</html>
